@@ -48,6 +48,29 @@ const DesktopHomepage = () => {
               the cutest doggo.
               <span>🐺</span>
             </p>
+            <Links>
+              <a
+                href="https://www.linkedin.com/in/mariie-petit/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FiLinkedin size={30} />
+              </a>
+              <a
+                href="https://github.com/MariePetit"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FiGithub size={25} />
+              </a>
+              <a
+                href="mailto:small.mariie@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FiMail size={30} />
+              </a>
+            </Links>
           </SubSection>
         </Backdrop>
       </CreatorOverview>
@@ -67,29 +90,6 @@ const DesktopHomepage = () => {
           curiosity in understanding what happens behind the scenes of The
           Internet. Now that I graduated... Let the adventure begin!
         </p>
-        <Links>
-          <a
-            href="https://www.linkedin.com/in/mariie-petit/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiLinkedin size={30} />
-          </a>
-          <a
-            href="https://github.com/MariePetit"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiGithub size={25} />
-          </a>
-          <a
-            href="mailto:small.mariie@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiMail size={30} />
-          </a>
-        </Links>
       </Section>
       <Separator id="projects"></Separator>
       <Section>
