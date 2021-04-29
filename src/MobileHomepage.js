@@ -84,7 +84,7 @@ const Separator = styled.div``;
 
 const Wrapper = styled.div`
   display: flex;
-  height: calc(100vh - 86px);
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;

@@ -1,11 +1,14 @@
 import GlobalStyles from "./GlobalStyles";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import MediaQuery from "react-responsive";
 
 import styled from "styled-components";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Header } from "./Header";
-
 import stars from "./assets/stars.jpg";
-import { Homepage } from "./Homepage";
+
+import { MobileHomepage } from "./MobileHomepage";
+import { DesktopHomepage } from "./DesktopHomepage";
+import { Header } from "./Header";
+import { MobileHeader } from "./MobileHeader";
 
 function App() {
   return (
@@ -18,10 +21,20 @@ function App() {
           backgroundAttachment: "fixed",
         }}
       >
-        <Header />
+        <MediaQuery minWidth={1049}>
+          <Header />
+        </MediaQuery>
+        <MediaQuery maxWidth={1048}>
+          <MobileHeader />
+        </MediaQuery>
         <Switch>
           <Route exact path="/">
-            <Homepage />
+            <MediaQuery maxWidth={1048}>
+              <MobileHomepage />
+            </MediaQuery>
+            <MediaQuery minWidth={1049}>
+              <DesktopHomepage />
+            </MediaQuery>
           </Route>
         </Switch>
       </Wrapper>
