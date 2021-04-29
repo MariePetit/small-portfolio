@@ -1,16 +1,33 @@
 import React from "react";
 import ReactPlayer from "react-player";
 import { NavLink } from "react-router-dom";
-import { FiGithub, FiLinkedin, FiMail, FiYoutube } from "react-icons/fi";
+import {
+  FiArrowUp,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiYoutube,
+} from "react-icons/fi";
 
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import photo from "./assets/marie-photo.jpg";
 import currentUserBg from "./assets/marie-bg.jpg";
 
 const MobileHomepage = () => {
+  const onClick = () => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <Wrapper>
+      <UpButton onClick={onClick}>
+        <FiArrowUp size={25} />
+      </UpButton>
       <CreatorOverview
         style={{
           backgroundImage: `url(${currentUserBg})`,
@@ -31,6 +48,29 @@ const MobileHomepage = () => {
               the cutest doggo.
               <span>🐺</span>
             </p>
+            <Links>
+              <a
+                href="https://www.linkedin.com/in/mariie-petit/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FiLinkedin size={30} />
+              </a>
+              <a
+                href="https://github.com/MariePetit"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FiGithub size={25} />
+              </a>
+              <a
+                href="mailto:small.mariie@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FiMail size={30} />
+              </a>
+            </Links>
           </SubSection>
         </Backdrop>
       </CreatorOverview>
@@ -50,29 +90,6 @@ const MobileHomepage = () => {
           curiosity in understanding what happens behind the scenes of The
           Internet. Now that I graduated... Let the adventure begin!
         </p>
-        <Links>
-          <a
-            href="https://www.linkedin.com/in/mariie-petit/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiLinkedin size={30} />
-          </a>
-          <a
-            href="https://github.com/MariePetit"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiGithub size={25} />
-          </a>
-          <a
-            href="mailto:small.mariie@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiMail size={30} />
-          </a>
-        </Links>
       </Section>
       <Separator id="projects"></Separator>
       <Section>
@@ -80,7 +97,12 @@ const MobileHomepage = () => {
         <SubSection>
           <h3>🔥 Flicker 🔥</h3>
           <Video>
-            <ReactPlayer url="https://youtu.be/QCDwgLBM3vQ" controls={true} />
+            <ReactPlayer
+              url="https://youtu.be/QCDwgLBM3vQ"
+              controls={true}
+              width="100%"
+              height="100%"
+            />
           </Video>
           <p>
             <strong>Flicker</strong> is a web app designed to help you keep
@@ -102,28 +124,45 @@ const MobileHomepage = () => {
             back-end), project MVP completed within 2 weeks.
           </p>
           <Links>
-            <NavLink to="https://youtu.be/QCDwgLBM3vQ">
+            <a
+              href="https://youtu.be/QCDwgLBM3vQ"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FiYoutube size={40} />
-            </NavLink>
-            <NavLink to="https://github.com/MariePetit/flicker">
+            </a>
+            <a
+              href="https://github.com/MariePetit/flicker"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FiGithub size={30} />
-            </NavLink>
+            </a>
           </Links>
         </SubSection>
         <SubSection>
           <h3>🦅 EagleTek 🦅</h3>
           <Video>
-            <ReactPlayer url="https://youtu.be/a9O7pC1S2KI" controls={true} />
+            <ReactPlayer
+              url="https://youtu.be/a9O7pC1S2KI"
+              controls={true}
+              width="100%"
+              height="100%"
+            />
           </Video>
           <p>
             Collaborative group project with my colleagues,{" "}
-            <NavLink to="victoriapeart.com">
+            <a href="http://victoriapeart.com" target="_blank" rel="noreferrer">
               <strong>Victoria Peart</strong>
-            </NavLink>{" "}
+            </a>{" "}
             and{" "}
-            <NavLink to="https://www.linkedin.com/in/andrew-fenrich/">
+            <a
+              href="https://www.linkedin.com/in/andrew-fenrich/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <strong>Andrew Feinrich</strong>
-            </NavLink>
+            </a>
             , as part of our Concordia Bootcamp, during which we had to develop
             an e-commerce web application, front-end and back-end. The
             application allows a user to navigate through the different products
@@ -138,12 +177,20 @@ const MobileHomepage = () => {
             of GIT, Github project and Agile method, completed in 1 week.
           </p>
           <Links>
-            <NavLink to="https://youtu.be/a9O7pC1S2KI">
+            <a
+              href="https://youtu.be/a9O7pC1S2KI"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FiYoutube size={40} />
-            </NavLink>
-            <NavLink to="https://github.com/v-prt/project-e-commerce">
+            </a>
+            <a
+              href="https://github.com/v-prt/project-e-commerce"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FiGithub size={30} />
-            </NavLink>
+            </a>
           </Links>
         </SubSection>
       </Section>
@@ -151,25 +198,57 @@ const MobileHomepage = () => {
   );
 };
 
+const fadeInAnimation = keyframes`
+  0% {opacity: 0}
+  100% {opacity: 1}
+`;
+
 const Wrapper = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation-name: ${fadeInAnimation};
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 
   h1 {
-    margin-top: 15px;
     font-size: 28px;
   }
 
   h2 {
+    font-weight: bold;
     font-size: 24px;
     color: #ff8ca8;
   }
 
   h3 {
     font-size: 20px;
-    padding: 20px;
+    padding: 10px 0 20px 0;
+  }
+`;
+
+const UpButton = styled.button`
+  background: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #ff8ca8;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  transition: 0.3s ease-in-out;
+  color: #ff8ca8;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-size: 22px;
+
+  &:hover {
+    cursor: pointer;
+    color: #ff8ca8;
+    border: 2px solid #ff8ca8;
+    background-color: white;
   }
 `;
 
@@ -179,7 +258,6 @@ const CreatorOverview = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: -5px;
 
   p {
     font-weight: normal;
@@ -243,13 +321,12 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px 180px;
   text-align: center;
   padding: 10px;
 
   p {
-    margin: auto;
     padding: 10px 10px 20px;
+    margin: auto;
   }
 `;
 
@@ -269,6 +346,8 @@ const SubSection = styled.div`
 `;
 
 const Video = styled.div`
+  width: 100%;
+  height: 260px;
   margin-bottom: 10px;
 `;
 
@@ -277,7 +356,7 @@ const Links = styled.div`
   align-items: center;
   margin: 10px 0 0 0;
 
-  svg {
+  a {
     margin: 0 10px;
     transition: 0.4s ease-in-out;
 
