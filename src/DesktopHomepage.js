@@ -119,12 +119,20 @@ const DesktopHomepage = () => {
             back-end), project MVP completed within 2 weeks.
           </p>
           <Links>
-            <NavLink to="https://youtu.be/QCDwgLBM3vQ">
+            <a
+              href="https://youtu.be/QCDwgLBM3vQ"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FiYoutube size={40} />
-            </NavLink>
-            <NavLink to="https://github.com/MariePetit/flicker">
+            </a>
+            <a
+              href="https://github.com/MariePetit/flicker"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FiGithub size={30} />
-            </NavLink>
+            </a>
           </Links>
         </SubSection>
         <SubSection>
@@ -134,13 +142,17 @@ const DesktopHomepage = () => {
           </Video>
           <p>
             Collaborative group project with my colleagues,{" "}
-            <NavLink to="victoriapeart.com">
+            <a href="http://victoriapeart.com" target="_blank" rel="noreferrer">
               <strong>Victoria Peart</strong>
-            </NavLink>{" "}
+            </a>{" "}
             and{" "}
-            <NavLink to="https://www.linkedin.com/in/andrew-fenrich/">
+            <a
+              href="https://www.linkedin.com/in/andrew-fenrich/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <strong>Andrew Feinrich</strong>
-            </NavLink>
+            </a>
             , as part of our Concordia Bootcamp, during which we had to develop
             an e-commerce web application, front-end and back-end. The
             application allows a user to navigate through the different products
@@ -155,12 +167,20 @@ const DesktopHomepage = () => {
             of GIT, Github project and Agile method, completed in 1 week.
           </p>
           <Links>
-            <NavLink to="https://youtu.be/a9O7pC1S2KI">
+            <a
+              href="https://youtu.be/a9O7pC1S2KI"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FiYoutube size={40} />
-            </NavLink>
-            <NavLink to="https://github.com/v-prt/project-e-commerce">
+            </a>
+            <a
+              href="https://github.com/v-prt/project-e-commerce"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FiGithub size={30} />
-            </NavLink>
+            </a>
           </Links>
         </SubSection>
       </Section>
@@ -189,13 +209,14 @@ const Wrapper = styled.div`
   }
 
   h2 {
+    font-weight: bold;
     font-size: 24px;
     color: #ff8ca8;
   }
 
   h3 {
     font-size: 20px;
-    padding: 20px;
+    padding: 10px 0 20px 0;
   }
 `;
 
@@ -225,7 +246,6 @@ const CreatorOverview = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: -5px;
 
   p {
     font-weight: normal;
