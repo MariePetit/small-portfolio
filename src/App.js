@@ -1,13 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
+import GlobalStyles from "./GlobalStyles";
+
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Homepage from "./Homepage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>WOOT</h1>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GlobalStyles />
+      <Switch>
+        <Route exact path="/">
+          <Homepage />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
