@@ -13,14 +13,12 @@ export const Flicker = () => {
         <Description>
           <p>
             <strong>Flicker</strong> is a web app designed to help you keep
-            track of movies or shows you want to watch or have watched. To get
-            started, set up your account and start browsing through our site!
-            However, what makes Flicker so special is the possibility of linking
-            your account with your significant other or BFF. Once you are
-            Flicker Partners, any movies or shows you are both interested in
-            will be added to a joint watchlist you can each access. No more
-            browsing for endless hours on a streaming app, looking for something
-            your both want to watch!
+            track of movies or shows you want to watch or have watched. There is
+            a unique feature allowing you to link your account with your SO or
+            BFF. Once you are Flicker Partners, any movies or shows you are both
+            interested in will be added to a joint watchlist you can each
+            access. No more browsing for endless hours on a streaming app,
+            looking for something your both want to watch!
           </p>
           <p>
             <strong>Technologies:</strong> React Native, React.js, Styled
@@ -57,14 +55,13 @@ export const Flicker = () => {
 
 const Wrapper = styled.div`
   padding-top: 86px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
 
   h2 {
-    font-size: 50px;
+    font-size: 36px;
     text-align: center;
   }
 `;
