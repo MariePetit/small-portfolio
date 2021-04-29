@@ -9,9 +9,6 @@ export default createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
     }
 html, body {
-    /* max-width: 100vw; */
-    background: linear-gradient(0deg, #6BBA7B 0%, #23636B 35%, #1C4562 100%);
-    background-attachment: fixed;
     color: white;
     scroll-behavior: smooth;
 }
@@ -31,7 +28,7 @@ html, body, div, span, applet, object, iframe,
         margin: 0;
         padding: 0;
         border: 0;
-        font-size: 16px;
+        font-size: 20px;
         vertical-align: baseline;
         box-sizing: border-box;
     }
@@ -48,9 +45,15 @@ html, body, div, span, applet, object, iframe,
     }
     a {
         text-decoration: none;
-        color: var(--secondary-color);
+        color: white;
+        transition: color 0.4s ease;
+        
         &:hover {
-            color: var(--accent-color)
+            color: gold;
         }
+    }
+    h1, h2, h3 {
+        font-family: "Thasadith", sans-serif;
+        font-weight: normal;
     }
 `;
