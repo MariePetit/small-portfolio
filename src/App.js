@@ -1,17 +1,20 @@
 import GlobalStyles from "./GlobalStyles";
 
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Homepage from "./Homepage";
+import { BrowserRouter } from "react-router-dom";
+import DesktopHomepage from "./DesktopHomepage";
+import MediaQuery from "react-responsive";
+import MobileHomepage from "./MobileHomepage";
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Switch>
-        <Route exact path="/">
-          <Homepage />
-        </Route>
-      </Switch>
+      <MediaQuery maxWidth={1048}>
+        <MobileHomepage />
+      </MediaQuery>
+      <MediaQuery minWidth={1049}>
+        <DesktopHomepage />
+      </MediaQuery>
     </BrowserRouter>
   );
 }
