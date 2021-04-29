@@ -7,11 +7,14 @@ export default createGlobalStyle`
         box-sizing: border-box;
         -webkit-font-smoothing: antialiased;
         font-family: 'Montserrat', sans-serif;
+
     }
 html, body {
     max-width: 100vw;
-    background: linear-gradient(0deg, #6BBA7B 0%, #23636B 50%, #1C4562 100%);
+    background: linear-gradient(0deg, #6BBA7B 0%, #23636B 35%, #1C4562 100%);
+    background-attachment: fixed;
     color: white;
+    scroll-behavior: smooth;
 }
 html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,

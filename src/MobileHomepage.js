@@ -8,7 +8,7 @@ import styled from "styled-components";
 import photo from "./assets/marie-photo.jpg";
 import currentUserBg from "./assets/marie-bg.jpg";
 
-const Homepage = () => {
+const MobileHomepage = () => {
   return (
     <Wrapper>
       <CreatorOverview
@@ -36,12 +36,11 @@ const Homepage = () => {
       </CreatorOverview>
       <NavMenu>
         <ul>
-          <a>About</a>
-          <li>Projects</li>
-          <li>Digital Art</li>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
         </ul>
       </NavMenu>
-      <Separator></Separator>
+      <Separator id="about"></Separator>
       <Section>
         <h2>About</h2>
         <p>
@@ -52,32 +51,47 @@ const Homepage = () => {
           Internet. Now that I graduated... Let the adventure begin!
         </p>
         <Links>
-          <a href="https://www.linkedin.com/in/mariie-petit/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/mariie-petit/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FiLinkedin size={30} />
           </a>
-          <a href="https://github.com/MariePetit" target="_blank">
+          <a
+            href="https://github.com/MariePetit"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FiGithub size={25} />
           </a>
-          <a href="mailto:small.mariie@gmail.com" target="_blank">
+          <a
+            href="mailto:small.mariie@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FiMail size={30} />
           </a>
         </Links>
       </Section>
-      <Separator></Separator>
+      <Separator id="projects"></Separator>
       <Section>
         <h2>Projects</h2>
         <SubSection>
           <h3>🔥 Flicker 🔥</h3>
-          <ReactPlayer url="https://youtu.be/QCDwgLBM3vQ" />
+          <Video>
+            <ReactPlayer url="https://youtu.be/QCDwgLBM3vQ" controls={true} />
+          </Video>
           <p>
-            Flicker is a web app designed to help you keep track of movies or
-            shows you want to watch or have watched. To get started, set up your
-            account and start browsing through our site! However, what makes
-            Flicker so special is the possibility of linking your account with
-            your significant other or BFF. Once you are Flicker Partners, any
-            movies or shows you are both interested in will be added to a joint
-            watchlist you can each access. No more browsing for endless hours on
-            a streaming app, looking for something your both want to watch!
+            <strong>Flicker</strong> is a web app designed to help you keep
+            track of movies or shows you want to watch or have watched. To get
+            started, set up your account and start browsing through our site!
+            However, what makes Flicker so special is the possibility of linking
+            your account with your significant other or BFF. Once you are
+            Flicker Partners, any movies or shows you are both interested in
+            will be added to a joint watchlist you can each access. No more
+            browsing for endless hours on a streaming app, looking for something
+            your both want to watch!
           </p>
           <p>
             <strong>Technologies:</strong> React Native, React.js, Styled
@@ -98,12 +112,20 @@ const Homepage = () => {
         </SubSection>
         <SubSection>
           <h3>🦅 EagleTek 🦅</h3>
-          <ReactPlayer url="https://youtu.be/a9O7pC1S2KI" />
+          <Video>
+            <ReactPlayer url="https://youtu.be/a9O7pC1S2KI" controls={true} />
+          </Video>
           <p>
             Collaborative group project with my colleagues,{" "}
-            <NavLink to="victoriapeart.com">Victoria Peart</NavLink> and Andrew
-            Feinrich, as part of our Concordia Bootcamp, during which we had to
-            develop an e-commerce web application, front-end and back-end. The
+            <NavLink to="victoriapeart.com">
+              <strong>Victoria Peart</strong>
+            </NavLink>{" "}
+            and{" "}
+            <NavLink to="https://www.linkedin.com/in/andrew-fenrich/">
+              <strong>Andrew Feinrich</strong>
+            </NavLink>
+            , as part of our Concordia Bootcamp, during which we had to develop
+            an e-commerce web application, front-end and back-end. The
             application allows a user to navigate through the different products
             and categories, and proceed to purchase.
           </p>
@@ -141,8 +163,8 @@ const Wrapper = styled.div`
   }
 
   h2 {
-    margin-top: 15px;
     font-size: 24px;
+    color: #ff8ca8;
   }
 
   h3 {
@@ -201,7 +223,7 @@ const NavMenu = styled.nav`
     display: flex;
   }
 
-  li {
+  a {
     border: 1px solid white;
     border-radius: 8px;
     padding: 10px;
@@ -221,13 +243,13 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 180px;
+  margin: 10px 180px;
   text-align: center;
   padding: 10px;
 
   p {
     margin: auto;
-    padding: 10px;
+    padding: 10px 10px 20px;
   }
 `;
 
@@ -242,11 +264,18 @@ const SubSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 20px 0 0 0;
+`;
+
+const Video = styled.div`
+  margin-bottom: 10px;
 `;
 
 const Links = styled.div`
   display: flex;
   align-items: center;
+  margin: 10px 0 0 0;
 
   svg {
     margin: 0 10px;
@@ -258,4 +287,4 @@ const Links = styled.div`
   }
 `;
 
-export default Homepage;
+export default MobileHomepage;
