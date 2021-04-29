@@ -89,7 +89,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 0 20px;
+  padding: 0 20px;
   background-color: rgba(0, 0, 0, 0.2);
 
   h1 {
